@@ -12,6 +12,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
     .container {
       background: #fff;
@@ -22,7 +23,7 @@
       width: 100%;
     }
     h1 {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -48,6 +49,7 @@
 <body>
   <div class="container">
     <h1>Déposer un contrat</h1>
+    <!-- ⚡ Important : data-netlify active la détection -->
     <form name="depot-contrat" method="POST" data-netlify="true" enctype="multipart/form-data">
       
       <input type="text" name="prenom" placeholder="Prénom" required>
