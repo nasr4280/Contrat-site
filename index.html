@@ -2,24 +2,69 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dépôt de contrat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <h1>Dépôt de contrat</h1>
-  <form action="mailto:votre.contrat@outlook.fr" method="POST" enctype="multipart/form-data">
-    <label>Prénom :</label><br>
-    <input type="text" name="prenom" required><br><br>
-
-    <label>Email :</label><br>
-    <input type="email" name="email" required><br><br>
-
-    <label>Nature du contrat :</label><br>
-    <input type="text" name="nature" required><br><br>
-
-    <label>Fichier contrat :</label><br>
-    <input type="file" name="contrat" required><br><br>
-
-    <button type="submit">Envoyer</button>
-  </form>
+  <div class="container">
+    <h1>Déposer un contrat</h1>
+    <form name="depot-contrat" method="POST" data-netlify="true" enctype="multipart/form-data">
+      
+      <input type="text" name="prenom" placeholder="Prénom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      
+      <select name="nature" required>
+        <option value="">-- Nature du contrat --</option>
+        <option value="travail">Contrat de travail</option>
+        <option value="bail">Contrat de bail</option>
+        <option value="vente">Contrat de vente</option>
+        <option value="autre">Autre</option>
+      </select>
+      
+      <input type="file" name="fichier" required>
+      
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
 </body>
 </html>
